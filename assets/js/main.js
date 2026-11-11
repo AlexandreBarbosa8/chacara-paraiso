@@ -56,7 +56,7 @@
     const y = window.scrollY;
     header.classList.toggle("is-solid", y > 40);
     const ct = contato.getBoundingClientRect();
-    const esconder = y < hero.offsetHeight * 0.6 || (ct.top < innerHeight * 0.7 && ct.bottom > 0);
+    const esconder = y < hero.offsetHeight * 0.6 || ct.top < innerHeight * 0.7; // some no topo e do orçamento até o fim
     fab.classList.toggle("is-hidden", esconder);
     if (mbar) mbar.classList.toggle("is-hidden", esconder);
   }

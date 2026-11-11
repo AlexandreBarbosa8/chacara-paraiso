@@ -374,7 +374,7 @@ body.menu-open .header .logo__txt em{color:var(--gold)}
   .mbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:45;padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom));background:rgba(251,249,244,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 -1px 0 var(--line);transition:transform .35s var(--ease)}
   .mbar .btn{min-height:52px}
   .mbar.is-hidden{transform:translateY(110%)}
-  .footer{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+
   .toast{bottom:calc(84px + env(safe-area-inset-bottom))}
 }
 @media (max-width:359px){.eventos{grid-template-columns:1fr}}
