@@ -378,3 +378,10 @@ body.menu-open .header .logo__txt em{color:var(--gold)}
   .toast{bottom:calc(84px + env(safe-area-inset-bottom))}
 }
 @media (max-width:359px){.eventos{grid-template-columns:1fr}}
+
+/* Carrossel da estrutura no celular: sem tremer na vertical ao arrastar */
+@media (max-width:759px){
+  .cards{overflow-y:hidden;overscroll-behavior-x:contain;touch-action:pan-x pan-y}
+  .cards>.card.reveal{opacity:1;transform:none;transition:none}
+  .cards>.card{box-shadow:0 6px 16px -12px rgba(22,36,27,.35)}
+}
