@@ -24,7 +24,7 @@ window.CONFIG = {
   // Topo do site: vídeo no celular, foto no computador
   hero: {
     imagem: "fotos/piscina.jpg",
-    videoCelular: "fotos/drone.mp4",
+    videoCelular: "",   // ex.: "fotos/drone.mp4" para usar vídeo no topo do celular
     posterCelular: "fotos/drone.jpg"
   },
 

@@ -50,13 +50,15 @@
   if (C.instagram) $$("[data-instagram]").forEach((a) => { a.href = C.instagram; a.hidden = false; });
 
   /* ================= Cabeçalho e menu ================= */
-  const header = $("#header"), menu = $("#menu"), burger = $(".burger"), fab = $(".fab");
+  const header = $("#header"), menu = $("#menu"), burger = $(".burger"), fab = $(".fab"), mbar = $(".mbar");
   const hero = $(".hero"), contato = $("#contato");
   function onScroll() {
     const y = window.scrollY;
     header.classList.toggle("is-solid", y > 40);
     const ct = contato.getBoundingClientRect();
-    fab.classList.toggle("is-hidden", y < hero.offsetHeight * 0.6 || (ct.top < innerHeight * 0.7 && ct.bottom > 0));
+    const esconder = y < hero.offsetHeight * 0.6 || (ct.top < innerHeight * 0.7 && ct.bottom > 0);
+    fab.classList.toggle("is-hidden", esconder);
+    if (mbar) mbar.classList.toggle("is-hidden", esconder);
   }
   addEventListener("scroll", onScroll, { passive: true });
   onScroll();

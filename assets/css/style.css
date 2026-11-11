@@ -334,3 +334,47 @@ body.menu-open .header .logo__txt em{color:var(--gold)}
 .map-link .btn{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);z-index:1}
 [hidden]{display:none!important}
 .logo__mark{overflow:hidden;padding:0}.logo__mark img{width:100%;height:100%}
+
+/* =========================================================
+   Ajustes do celular
+   ========================================================= */
+.mbar{display:none}
+.hint--cards{display:none}
+@media (max-width:759px){
+  /* Topo: foto da piscina enquadrada */
+  .hero__media img{object-position:58% center}
+  .hero__in{padding-bottom:84px}
+
+  /* Selo "7 suítes" dentro da foto */
+  .mosaic__badge{left:10px;bottom:10px;padding:10px 14px;border-radius:14px}
+  .mosaic__badge strong{font-size:1.9rem}
+
+  /* Estrutura: carrossel de arrastar */
+  .cards{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(-1*var(--gutter));padding:4px var(--gutter) 18px;scroll-padding:0 var(--gutter);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .cards::-webkit-scrollbar{display:none}
+  .cards>.card{flex:0 0 84%;scroll-snap-align:start}
+  .card:hover{transform:none}
+  .card__media,.card__media--soon{aspect-ratio:4/3}
+  .card__media--soon svg{width:64px;height:64px}
+  .hint--cards{display:block;margin-top:6px}
+
+  /* Eventos: grade compacta de 2 colunas */
+  .eventos{grid-template-columns:1fr 1fr;gap:10px}
+  .eventos li{flex-direction:column;gap:10px;padding:16px}
+  .ev-ico{width:42px;height:42px;border-radius:12px}
+  .ev-ico svg{width:22px;height:22px}
+  .eventos h3{font-size:1.1rem}
+  .eventos p{font-size:13.5px;line-height:1.45}
+
+  /* Mapa mais baixo */
+  .loc__map,.loc__map iframe,.map-link{min-height:280px}
+
+  /* WhatsApp: barra fixa no lugar do botão flutuante */
+  .fab{display:none}
+  .mbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:45;padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom));background:rgba(251,249,244,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 -1px 0 var(--line);transition:transform .35s var(--ease)}
+  .mbar .btn{min-height:52px}
+  .mbar.is-hidden{transform:translateY(110%)}
+  .footer{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+  .toast{bottom:calc(84px + env(safe-area-inset-bottom))}
+}
+@media (max-width:359px){.eventos{grid-template-columns:1fr}}
