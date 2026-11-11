@@ -339,7 +339,7 @@ body.menu-open .header .logo__txt em{color:var(--gold)}
    Ajustes do celular
    ========================================================= */
 .mbar{display:none}
-.hint--cards{display:none}
+
 @media (max-width:759px){
   /* Topo: foto da piscina enquadrada */
   .hero__media img{object-position:58% center}

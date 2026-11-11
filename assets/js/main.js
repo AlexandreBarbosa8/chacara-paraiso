@@ -123,6 +123,14 @@
     return `<article class="card reveal" id="amb-${esc(a.id)}">${media}<div class="card__body"><span class="card__med">${esc(a.medida)}</span><h3>${esc(a.nome)}</h3><p>${esc(a.texto)}</p></div></article>`;
   }).join("");
 
+  // Aviso "arraste para o lado" só aparece quando o carrossel realmente rola
+  (function () {
+    const cards = $("[data-ambientes]"), dica = $("[data-cards-hint]");
+    if (!dica) return;
+    const checa = () => { dica.hidden = !(cards.scrollWidth > cards.clientWidth + 4); };
+    checa(); addEventListener("resize", checa); addEventListener("load", checa);
+  })();
+
   /* ================= Eventos ================= */
   $("[data-eventos]").innerHTML = C.eventos.map((e) =>
     `<li class="reveal"><span class="ev-ico"><svg viewBox="0 0 24 24" aria-hidden="true">${EV[e.icone] || EV.estrela}</svg></span><div><h3>${esc(e.nome)}</h3><p>${esc(e.texto)}</p></div></li>`).join("");
